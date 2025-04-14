@@ -1,0 +1,9 @@
+.wrapper {
+  width: 356px;
+  padding: 20px 0 26px;
+  padding-left: -18px;
+}
+.container {
+  width: var(--default-layout-width);
+  display: flex;
+}
