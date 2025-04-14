@@ -9,7 +9,8 @@ function Rectangle() {
   const cx = classNames.bind(styles);
   const [length, setLength] = useState(null);
   const [width, setWidth] = useState(null);
-  const [error, setError] = useState(false);
+  const [error1, setError1] = useState(false);
+  const [error2, setError2] = useState(false);
 
   const handelLength = (event) => {
     let inputValue = event.target.value;
@@ -18,9 +19,9 @@ function Rectangle() {
     // Kiểm tra nếu input hợp lệ (số nguyên hoặc số thập phân, không có chữ)
     if (regex.test(inputValue) && !/[a-zA-Z]/.test(inputValue)) {
       setLength(inputValue);
-      setError(''); // Xóa thông báo lỗi nếu hợp lệ
+      setError1(''); // Xóa thông báo lỗi nếu hợp lệ
     } else {
-      setError('Vui lòng nhập số hợp lệ!'); // Thông báo lỗi nếu không hợp lệ
+      setError1('Vui lòng nhập số hợp lệ!'); // Thông báo lỗi nếu không hợp lệ
     }
   };
   const handeWidth = (event) => {
@@ -30,9 +31,9 @@ function Rectangle() {
     // Kiểm tra nếu input hợp lệ (số nguyên hoặc số thập phân, không có chữ)
     if (regex.test(inputValue) && !/[a-zA-Z]/.test(inputValue)) {
       setWidth(inputValue);
-      setError(''); // Xóa thông báo lỗi nếu hợp lệ
+      setError2(''); // Xóa thông báo lỗi nếu hợp lệ
     } else {
-      setError('Vui lòng nhập số hợp lệ!'); // Thông báo lỗi nếu không hợp lệ
+      setError2('Vui lòng nhập số hợp lệ!'); // Thông báo lỗi nếu không hợp lệ
     }
   };
 
@@ -60,12 +61,13 @@ function Rectangle() {
               fontSize: '1.6rem', //  tăng size value (text nhập vào)
             },
           }}
-          error={!!error} // Hiển thị lỗi nếu có
-          helperText={error} // Hiển thị thông báo lỗi
+          error={!!error1} // Hiển thị lỗi nếu có
+          helperText={error1} // Hiển thị thông báo lỗi
         />
         <TextField
           className={cx('length-input')}
           required
+          value={width}
           id="outlined-required"
           label="Chiều rộng"
           onChange={handeWidth}
@@ -77,11 +79,11 @@ function Rectangle() {
               fontSize: '1.6rem', //  tăng size value (text nhập vào)
             },
           }}
-          error={!!error} // Hiển thị lỗi nếu có
-          helperText={error} // Hiển thị thông báo lỗi
+          error={!!error2} // Hiển thị lỗi nếu có
+          helperText={error2} // Hiển thị thông báo lỗi
         />
-        <Button primary className={cx('follow-btn')}>
-          Follow
+        <Button primary className={cx('result')}>
+          Tính
         </Button>
       </div>
     </Box>
