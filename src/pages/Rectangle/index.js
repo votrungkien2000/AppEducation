@@ -70,7 +70,7 @@ function Rectangle() {
   };
 
   const handelClick = () => {
-    setResult(parseFloat((parseFloat(length.replace(',', '.')) + parseFloat(width.replace(',', '.'))) * 2));
+    setResult(parseFloat(parseFloat(length.replace(',', '.')) * parseFloat(width.replace(',', '.'))));
     setOpen(true);
   };
 
