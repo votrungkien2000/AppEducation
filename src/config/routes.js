@@ -1,5 +1,5 @@
 const routes = {
-  Rectangle: '/rectangle',
+  Rectangle: '/',
   Square: '/square',
   Triangular: '/triangular',
 };

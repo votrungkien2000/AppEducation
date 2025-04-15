@@ -99,12 +99,10 @@ function Header() {
         {/*logo*/}
         <div className={cx('logo')}>
           <Link to={config.routes.home} className={cx('logo-link')}>
-            <img src={images.logo} alt="TikTok logo" />
+            <img className={cx('student-logo')} src={images.logo} alt="student-logo" />
           </Link>
         </div>
-        {/*search*/}
-        <Search></Search>
-
+        {/* <Search></Search>
         <div className={cx('action')}>
           {currentUser ? (
             <>
@@ -145,7 +143,7 @@ function Header() {
               </button>
             )}
           </Menu>
-        </div>
+        </div> */}
       </div>
     </header>
   );

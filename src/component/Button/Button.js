@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import styles from './Button.module.scss';
 
 function Button({
-  to,
-  href,
+  to = null,
+  href = null,
   className,
   rounded = false,
   disabled = false,
